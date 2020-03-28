@@ -1,0 +1,25 @@
+{
+  "name": "timestamp-microservice",
+  "version": "1.0.0",
+  "description": "A timestamp microservice for freecodecamp  (https://www.freecodecamp.org/learn/apis-and-microservices/apis-and-microservices-projects/timestamp-microservice)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vzoCVKnYTk/timestamp-microservice.git"
+  },
+  "keywords": [
+    "date-fns",
+    "express",
+    "javascript",
+    "node"
+  ],
+  "author": "John Clema",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vzoCVKnYTk/timestamp-microservice/issues"
+  },
+  "homepage": "https://github.com/vzoCVKnYTk/timestamp-microservice#readme"
+}
