@@ -6,7 +6,7 @@
   "scripts": {
     "clean": "rm -rf /dist",
     "build": "tsc",
-    "prestart": "yarn clean && yarn build",
+    "prestart": "npm run clean && npm run build && cp -R views dist && cp -R public dist",
     "start": "node ."
   },
   "repository": {
