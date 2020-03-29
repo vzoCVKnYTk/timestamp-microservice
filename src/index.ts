@@ -1,5 +1,8 @@
 
 import express from 'express'
+import { CorsOptions } from 'cors'
+const cors = require('cors')
+
 import {
     emptyDateHandler, 
     unixDateHandler, 
@@ -7,7 +10,22 @@ import {
     isoDateHandler,
     errorResponseHandler, 
 } from './handlers'
+
+
+
 const app = express()
+const corsOptions: CorsOptions = { optionsSuccessStatus: 200 }
+
+app.use(cors(corsOptions))
+
+// http://expressjs.com/en/starter/static-files.html
+app.use(express.static('public'));
+
+// http://expressjs.com/en/starter/basic-routing.html
+app.get("/", function (req, res) {
+  res.sendFile(__dirname + '/views/index.html');
+});
+
 
 const timestampRoute = "/api/timestamp/:date?"
 
@@ -20,8 +38,6 @@ app.get(
     errorResponseHandler
 )
 
-const port = process.env.PORT || 3000
-
-app.listen(port, () => {
-    console.log( `Server started at http://localhost:${ port }` )
-})
+const listener = app.listen(process.env.PORT, function () {
+    console.log('Your app is listening on port ' + listener.address().port);
+});
